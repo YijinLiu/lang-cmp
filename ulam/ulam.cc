@@ -1,4 +1,5 @@
-// 406518412 ns used to find 7584 Ulam numbers.
+//    406,518,412 ns used to find  7,584 Ulam numbers <=   100,000.
+// 37,632,502,241 ns used to find 7,4084 Ulam numbers <= 1,000,000.
 
 #include <inttypes.h>
 
@@ -65,7 +66,8 @@ int main(int argc, char* argv[]) {
         std::chrono::high_resolution_clock::now() - start;
     total_elapsed_ns +=
         std::chrono::duration_cast<std::chrono::nanoseconds>(elapsed).count();
-    std::cout << total_elapsed_ns << " ns used to find " << ulam_numbers.size() << " Ulam numbers.\n";
+    std::cout << total_elapsed_ns << " ns used to find " << ulam_numbers.size()
+              << " Ulam numbers <=" << FLAGS_limit << ".\n";
 
     std::ofstream csv_file;
     csv_file.open(FLAGS_output_csv);

@@ -1,4 +1,5 @@
-// 413386971 ns used to find 7584 Ulam numbers <= 100000
+//    413,386,971 ns used to find  7,584 Ulam numbers <=   100,000
+// 38,506,263,116 ns used to find 74,084 Ulam numbers <= 1,000,000
 
 use std::fs::File;
 use std::io::Write;

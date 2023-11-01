@@ -1,4 +1,5 @@
-# 263,210,088 ns used to find 7,584 Ulam numbers <= 100,000.
+#    263,210,088 ns used to find  7,584 Ulam numbers <=   100,000.
+# 23,995,007,599 ns used to find 74,084 Ulam numbers <= 1,000,000.
 
 using ArgParse
 using CSV, DataFrames
