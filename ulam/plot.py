@@ -5,7 +5,7 @@ import pandas as pd
 
 FLAGS = flags.FLAGS
 flags.DEFINE_integer('num_samples', 100, '')
-flags.DEFINE_string('image_file', 'ulam_100k_py.png', '')
+flags.DEFINE_string('image_file', 'ulam_100k.png', '')
 
 def main(argv):
     fig, ax = plt.subplots(figsize = (32, 18))

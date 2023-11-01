@@ -1,4 +1,4 @@
-! 919350908 ns used to find                 7584  Ulam numbers <=                100000
+! 426960367 ns used to find                 7584  Ulam numbers <=                100000
 
 module class_UlamNumbers
     implicit none
@@ -76,7 +76,7 @@ program ulam
     integer(kind = 8) :: elapsed_ns, total_elapsed_ns
     call ulam_numbers%init(10_8)
 
-    open(10, file = "ulam_100k_f90.csv", status = 'new') 
+    open(10, file = "ulam_100k_f90.csv", status = 'new')
     write(10,"(a)") "ulam_num,elapsed_ns"
     write(10,"(a)") "1,0"
     write(10,"(a)") "2,0"
@@ -90,10 +90,12 @@ program ulam
             total_elapsed_ns = total_elapsed_ns + elapsed_ns
             write(10,"(i0 a i0)") i, ",", elapsed_ns
             print *, elapsed_ns, "ns used to find Ulam number", i
-            call ulam_numbers%add(i)
             call cpu_time(start_time)
+            call ulam_numbers%add(i)
         end if
     end do
+    call cpu_time(end_time)
+    total_elapsed_ns = total_elapsed_ns + int((end_time - start_time) * 1e9)
 
     close(10)
 
